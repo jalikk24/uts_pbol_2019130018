@@ -158,7 +158,7 @@ public class ListDataController implements Initializable {
                 tblData.getColumns().addAll(col);
 
                 col = new TableColumn("Kelurahan");
-                col.setCellValueFactory(new PropertyValueFactory<ModelCiri, String>("Kelurahan"));
+                col.setCellValueFactory(new PropertyValueFactory<ModelCiri, String>("kelurahan"));
                 tblData.getColumns().addAll(col);
 
                 tblData.setItems(data);
@@ -262,7 +262,7 @@ public class ListDataController implements Initializable {
             tblData.getColumns().addAll(col);
 
             col = new TableColumn("Kelurahan");
-            col.setCellValueFactory(new PropertyValueFactory<ModelCiri, String>("Kelurahan"));
+            col.setCellValueFactory(new PropertyValueFactory<ModelCiri, String>("kelurahan"));
             tblData.getColumns().addAll(col);
 
             tblData.setItems(data);
