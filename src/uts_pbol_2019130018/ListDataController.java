@@ -72,7 +72,7 @@ public class ListDataController implements Initializable {
     private ComboBox<String> comboKel;
     @FXML
     private Button btnSearch;
-    
+
     private List<ModelProvinsi> listProv = new ArrayList<>();
     private List<ModelKotaKabs> listKota = new ArrayList<>();
     private List<ModelKecamatan> listKec = new ArrayList<>();
@@ -109,7 +109,7 @@ public class ListDataController implements Initializable {
         getListData();
         getProvinsi();
     }
-    
+
     @FXML
     private void onSearchTextChange(KeyEvent event) {
         if (!edtSearch.getText().isEmpty()) {
@@ -143,6 +143,22 @@ public class ListDataController implements Initializable {
 
                 col = new TableColumn("Berkacamata");
                 col.setCellValueFactory(new PropertyValueFactory<ModelCiri, String>("kacamata"));
+                tblData.getColumns().addAll(col);
+
+                col = new TableColumn("Provinsi");
+                col.setCellValueFactory(new PropertyValueFactory<ModelCiri, String>("provinsi"));
+                tblData.getColumns().addAll(col);
+
+                col = new TableColumn("Kota / Kabupaten");
+                col.setCellValueFactory(new PropertyValueFactory<ModelCiri, String>("kotaKabs"));
+                tblData.getColumns().addAll(col);
+
+                col = new TableColumn("Kecamatan");
+                col.setCellValueFactory(new PropertyValueFactory<ModelCiri, String>("kecamatan"));
+                tblData.getColumns().addAll(col);
+
+                col = new TableColumn("Kelurahan");
+                col.setCellValueFactory(new PropertyValueFactory<ModelCiri, String>("Kelurahan"));
                 tblData.getColumns().addAll(col);
 
                 tblData.setItems(data);
@@ -264,7 +280,7 @@ public class ListDataController implements Initializable {
             listCatFilter.add("Berkacamata");
         }
     }
-    
+
     private void setupCombobox() {
         cmbGender.getItems().add("Laki-laki");
         cmbGender.getItems().add("Perempuan");
@@ -288,7 +304,7 @@ public class ListDataController implements Initializable {
         cmKacamata.setValue(titleKacamata);
 
     }
-    
+
     private void getProvinsi() {
         ControllerRegion controllerRegion = new ControllerRegion();
         listProv = controllerRegion.getProvinsi();
@@ -318,7 +334,7 @@ public class ListDataController implements Initializable {
         }
         comboKec.setValue(titleKec);
     }
-    
+
     private void getKelurahan(final int kecId) {
         ControllerRegion controllerRegion = new ControllerRegion();
         listKel = controllerRegion.getKelurahan(kecId);
@@ -328,5 +344,5 @@ public class ListDataController implements Initializable {
         }
         comboKel.setValue(titleKel);
     }
-    
+
 }
