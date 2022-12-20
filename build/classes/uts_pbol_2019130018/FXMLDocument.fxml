@@ -4,9 +4,12 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uts_pbol_2019130018.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="296.0" prefWidth="356.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uts_pbol_2019130018.FXMLDocumentController">
     <children>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
       <MenuBar layoutY="6.0">
@@ -28,5 +31,15 @@
           </Menu>
         </menus>
       </MenuBar>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="103.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/dpo.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="46.0" layoutY="215.0" prefHeight="45.0" prefWidth="264.0" text="Daftar Pencarian Orang" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Noto Sans Myanmar Black" size="15.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>
