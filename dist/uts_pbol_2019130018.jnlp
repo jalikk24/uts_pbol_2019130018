@@ -9,7 +9,7 @@
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
     <jar href="lib/mysql-connector-java-8.0.30.jar" size="2513563" download="eager" />
-    <jar href="uts_pbol_2019130018.jar" size="57366" download="eager" />
+    <jar href="uts_pbol_2019130018.jar" size="58308" download="eager" />
   </resources>
   <jfx:javafx-desc  width="800" height="600" main-class="uts_pbol_2019130018.Uts_pbol_2019130018"  name="uts_pbol_2019130018" />
   <update check="always"/>

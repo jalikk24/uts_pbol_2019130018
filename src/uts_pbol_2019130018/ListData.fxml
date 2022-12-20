@@ -1,21 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uts_pbol_2019130018.ListDataController">
+<AnchorPane id="AnchorPane" prefHeight="748.0" prefWidth="766.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uts_pbol_2019130018.ListDataController">
    <children>
-      <TableView fx:id="tblData" layoutY="89.0" prefHeight="191.0" prefWidth="600.0">
+      <TableView fx:id="tblData" layoutY="89.0" prefHeight="306.0" prefWidth="731.0">
         <columns>
           <TableColumn prefWidth="75.0" text="C1" />
           <TableColumn prefWidth="75.0" text="C2" />
         </columns>
       </TableView>
-      <ComboBox fx:id="comboFilters" layoutX="429.0" layoutY="49.0" onAction="#onFilterSelected" prefWidth="150.0" />
-      <ComboBox fx:id="comboCatFilter" layoutX="238.0" layoutY="50.0" onAction="#onCatFilterSelected" prefWidth="150.0" />
-      <TextField fx:id="edtSearch" layoutX="14.0" layoutY="51.0" onKeyTyped="#onSearchTextChange" promptText="Cari pengguna" />
+      <TextField fx:id="edtSearch" layoutX="14.0" layoutY="51.0" onKeyTyped="#onSearchTextChange" prefHeight="26.0" prefWidth="700.0" promptText="Cari pengguna" />
+      <Text layoutX="37.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender" wrappingWidth="51.216309517621994" />
+      <Text layoutX="227.0" layoutY="459.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Warna Kulit" wrappingWidth="75.99999988079071" />
+      <Text layoutX="408.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postur" />
+      <Text layoutX="36.0" layoutY="546.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suara" />
+      <Text layoutX="208.0" layoutY="546.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Berkacamata" />
+      <ComboBox fx:id="cmbGender" layoutX="37.0" layoutY="476.0" prefWidth="150.0" />
+      <ComboBox fx:id="cmbKulit" layoutX="227.0" layoutY="476.0" prefWidth="150.0" />
+      <ComboBox fx:id="cmbPostur" layoutX="406.0" layoutY="476.0" prefWidth="150.0" />
+      <ComboBox fx:id="cmbSuara" layoutX="34.0" layoutY="561.0" prefWidth="150.0" />
+      <ComboBox fx:id="cmKacamata" layoutX="208.0" layoutY="561.0" prefWidth="150.0" />
+     <ComboBox fx:id="comboProv" layoutX="36.0" layoutY="652.0" onAction="#selecProv" prefWidth="150.0" />
+      <ComboBox fx:id="comboKotaKabs" layoutX="210.0" layoutY="652.0" onAction="#selectKotaKabs" prefWidth="150.0" />
+      <ComboBox fx:id="comboKec" layoutX="404.0" layoutY="652.0" onAction="#selectKecamatan" prefWidth="150.0" />
+      <ComboBox fx:id="comboKel" layoutX="581.0" layoutY="652.0" onAction="#selectKelurahan" prefWidth="150.0" />
+      <Label layoutX="37.0" layoutY="621.0" text="Provinsi" />
+      <Label layoutX="212.0" layoutY="621.0" text="Kota/Kabupaten" />
+      <Label layoutX="406.0" layoutY="621.0" text="Kecamatan" />
+      <Label layoutX="578.0" layoutY="621.0" text="Kelurahan" />
+      <Button fx:id="btnSearch" layoutX="676.0" layoutY="701.0" mnemonicParsing="false" onAction="#onSearchClick" text="Search" />
    </children>
 </AnchorPane>

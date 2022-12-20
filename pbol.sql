@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 20 Des 2022 pada 15.50
+-- Waktu pembuatan: 20 Des 2022 pada 17.57
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 7.2.34
 
@@ -49,7 +49,9 @@ INSERT INTO `ciri_ciri` (`id`, `nama`, `gender`, `warna_kulit`, `postur`, `suara
 (1, 'Ajat', 'Laki-laki', 'Hitam', 'Pendek', 'Berat', 'Tidak', 12, 161, 2001, 30421),
 (13, 'Jessica', 'Perempuan', 'Putih', 'Tinggi', 'Tinggi', 'Ya', 3, 70, 816, 12557),
 (15, 'Masha', 'Perempuan', 'Putih', 'Pendek', 'Tinggi', 'Tidak', 11, 153, 1925, 25091),
-(16, 'Tilis', 'Laki-laki', 'Hitam', 'Tinggi', 'Berat', 'Tidak', 19, 271, 4211, 53063);
+(16, 'Tilis', 'Laki-laki', 'Hitam', 'Tinggi', 'Berat', 'Tidak', 19, 271, 4211, 53063),
+(22, 'Mc\'Duloh', 'Laki-laki', 'Coklat', 'Pendek', 'Berat', 'Ya', 12, 161, 2001, 26786),
+(23, 'Nyonya Puff', 'Perempuan', 'Putih', 'Pendek', 'Tinggi', 'Tidak', 11, 157, 1940, 25176);
 
 -- --------------------------------------------------------
 
@@ -88940,7 +88942,7 @@ ALTER TABLE `provinsi`
 -- AUTO_INCREMENT untuk tabel `ciri_ciri`
 --
 ALTER TABLE `ciri_ciri`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT untuk tabel `kecamatan`

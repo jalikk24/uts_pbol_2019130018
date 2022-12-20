@@ -48,13 +48,17 @@ public class Controller {
         }
     }
 
-    public ObservableList<ModelCiri> getListCiriFilter(final int filterType, final String filter) {
+    public ObservableList<ModelCiri> getListCiriFilter(final String name) {
         try {
             ObservableList<ModelCiri> tableData = FXCollections.observableArrayList();
             Koneksi con = new Koneksi();
             con.bukaKoneksi();
             con.statement = con.dbKoneksi.createStatement();
-            final String query = filtering(filterType, filter);
+            final String query = "SELECT * FROM ciri_ciri INNER JOIN provinsi ON ciri_ciri.idProv = provinsi.prov_id " +
+                    "INNER JOIN kotaKabs ON ciri_ciri.idKotaKabs = kotaKabs.city_id " +
+                    "INNER JOIN kecamatan ON ciri_ciri.idKecamatan = kecamatan.dis_id " +
+                    "INNER JOIN kelurahan ON ciri_ciri.idKelurahan = kelurahan.subdis_id"
+                    + "WHERE nama = '" + name + "'";
             ResultSet rs = con.statement.executeQuery(query);
             int i = 1;
             while (rs.next()) {
@@ -66,6 +70,10 @@ public class Controller {
                 model.setPostur(rs.getString("postur"));
                 model.setSuara(rs.getString("suara"));
                 model.setKacamata(rs.getString("berkacamata"));
+                model.setProvinsi(rs.getString("prov_name"));
+                model.setKotaKabs(rs.getString("city_name"));
+                model.setKecamatan(rs.getString("dis_name"));
+                model.setKelurahan(rs.getString("subdis_name"));
                 tableData.add(model);
                 i++;
             }
@@ -142,7 +150,11 @@ public class Controller {
             Koneksi con = new Koneksi();
             con.bukaKoneksi();
             con.statement = con.dbKoneksi.createStatement();
-            final String query = "SELECT * FROM ciri_ciri WHERE nama LIKE '" + nama + "%'";
+            final String query = "SELECT * FROM ciri_ciri INNER JOIN provinsi ON ciri_ciri.idProv = provinsi.prov_id " +
+                    "INNER JOIN kotaKabs ON ciri_ciri.idKotaKabs = kotaKabs.city_id " +
+                    "INNER JOIN kecamatan ON ciri_ciri.idKecamatan = kecamatan.dis_id " +
+                    "INNER JOIN kelurahan ON ciri_ciri.idKelurahan = kelurahan.subdis_id "+ 
+                    "WHERE nama LIKE '%" + nama + "%'";
             ResultSet rs = (ResultSet) con.statement.executeQuery(query);
             int i = 1;
             while (rs.next()) {
@@ -153,6 +165,10 @@ public class Controller {
                 modelCiri.setPostur(rs.getString("postur"));
                 modelCiri.setSuara(rs.getString("suara"));
                 modelCiri.setKacamata(rs.getString("berkacamata"));
+                modelCiri.setProvinsi(rs.getString("prov_name"));
+                modelCiri.setKotaKabs(rs.getString("city_name"));
+                modelCiri.setKecamatan(rs.getString("dis_name"));
+                modelCiri.setKelurahan(rs.getString("subdis_name"));
                 tableData.add(modelCiri);
                 i++;
             }
